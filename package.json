@@ -1,7 +1,7 @@
 {
-  "name": "mernboilerplace",
+  "name": "devconnector",
   "version": "1.0.0",
-  "description": "My personal boiler plate for MERN Framework",
+  "description": "Social network for developers",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
@@ -9,9 +9,10 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild":
+      "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Ajibade Hammed",
+  "author": "Brad Traversy",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,11 +22,8 @@
     "gravatar": "^1.6.0",
     "jsonwebtoken": "^8.2.0",
     "mongoose": "^5.0.12",
-    "mongoose-seed": "^0.6.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "slug": "^2.1.1",
-    "slugify": "^1.4.0",
     "validator": "^9.4.1"
   },
   "devDependencies": {

@@ -5,8 +5,8 @@ const passport = require('passport');
 const path = require('path');
 
 const users = require('./routes/api/users');
-const healthcare = require('./routes/api/healthcare');
-const healthcareprofile = require('./routes/api/healthcareprofile');
+const profile = require('./routes/api/profile');
+const posts = require('./routes/api/posts');
 
 const app = express();
 
@@ -26,10 +26,13 @@ mongoose
 // Passport middleware
 app.use(passport.initialize());
 
+// Passport Config
+require('./config/passport')(passport);
+
 // Use Routes
 app.use('/api/users', users);
-app.use('/api/healthcare', healthcare);
-app.use('/api/healthcareprofile', healthcareprofile);
+app.use('/api/profile', profile);
+app.use('/api/posts', posts);
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
